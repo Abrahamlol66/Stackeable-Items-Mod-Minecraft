@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "dev.abraahamlol6.stackeableitems.mixin.client",
+	"compatibilityLevel": "JAVA_17",
+	"refmap": "stackeable-items-mod.refmap.json",
+	"client": [
+		"ExampleClientMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
