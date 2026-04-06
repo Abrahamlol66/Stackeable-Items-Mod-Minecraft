@@ -8,9 +8,7 @@
 		"ItemMixin",
 		"PotionItemMixin",
 		"BrewingRecipeRegistryAccessor",
-		"PotionDurationMixin",
-		"BrewingStandMixin",
-		"ItemStackMixin"
+		"PotionDurationMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

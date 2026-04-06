@@ -11,10 +11,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Item.class)
 public abstract class ItemMixin {
-    @Inject(method = "getMaxCount()I", at = @At("HEAD"), cancellable = true)
-    private void onGetMaxCount(CallbackInfoReturnable<Integer> cir) {
-        Object self = this;
-        if (self instanceof PotionItem || self instanceof SplashPotionItem || self instanceof LingeringPotionItem) {
+    @Inject(method = "getMaxCount", at = @At("HEAD"), cancellable = true)
+    private void stackableItems$modifyMaxCount(CallbackInfoReturnable<Integer> cir) {
+        if ((Object)this instanceof PotionItem || (Object)this instanceof SplashPotionItem || (Object)this instanceof LingeringPotionItem) {
             cir.setReturnValue(64);
         }
     }
