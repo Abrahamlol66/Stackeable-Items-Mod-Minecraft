@@ -14,7 +14,12 @@ Se ha añadido un tercer nivel para las pociones con efectos de intensidad:
 - **Obtención**: Se consiguen usando **Glowstone Dust** sobre una poción de Nivel II en el soporte de pociones (Brewing Stand).
 - **Duración base Nivel III**: **1:30 minutos** (o efecto instantáneo potenciado).
 
-### 3. Duraciones Personalizadas
+### 3. Nomenclatura Automática de Niveles
+El mod añade automáticamente numerales romanos al nombre de las pociones según su nivel de potencia para una mejor identificación:
+- **Nivel II**: Se añade el sufijo "**II**" (ej. *Poción de Fuerza II*).
+- **Nivel III**: Se añade el sufijo "**III**" (ej. *Poción de Velocidad III*).
+
+### 4. Duraciones Personalizadas
 - **Pociones de Nivel II**: Tienen una duración mejorada de **2:00 minutos** (30 segundos extra sobre el valor vanilla).
 - **Pociones de Nivel III**: Tienen una duración de **1:30 minutos**.
 - **Otras pociones**: Mantienen sus duraciones vanilla originales (ej. 3:00 o 8:00 minutos).
@@ -31,6 +36,7 @@ Se ha añadido un tercer nivel para las pociones con efectos de intensidad:
 El mod utiliza Mixins avanzados para modificar el comportamiento base de Minecraft de forma segura y eficiente:
 
 - **`ItemMixin`**: Intercepta `getMaxCount()` dinámicamente para devolver 64 en todos los tipos de pociones, evitando errores de acceso ilegal a campos finales de Java.
+- **`ItemStackMixin`**: Modifica dinámicamente el nombre de los ítems para añadir los numerales romanos (II, III) según el nivel de la poción.
 - **`PotionItemMixin`**: Gestiona la lógica de devolución de botellas vacías al inventario.
 - **`PotionDurationMixin`**: Inyecta código en el constructor de las pociones para ajustar las duraciones en tiempo real.
 - **`BrewingRecipeRegistryAccessor`**: Proporciona acceso para registrar nuevas recetas de alquimia personalizadas.
